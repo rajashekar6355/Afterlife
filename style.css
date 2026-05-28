@@ -1,0 +1,498 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: #050810;
+    color: white;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Animated star background */
+.stars-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 3s infinite;
+}
+
+.star.small {
+    width: 1px;
+    height: 1px;
+    opacity: 0.3;
+}
+
+.star.medium {
+    width: 2px;
+    height: 2px;
+    opacity: 0.5;
+}
+
+.star.large {
+    width: 3px;
+    height: 3px;
+    opacity: 0.7;
+}
+
+.star.bright {
+    width: 2px;
+    height: 2px;
+    opacity: 0.9;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* Shooting stars */
+.shooting-star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: linear-gradient(45deg, #fff, transparent);
+    border-radius: 50%;
+    animation: shoot 4s linear infinite;
+}
+
+@keyframes shoot {
+    0% {
+        transform: translateX(-100px) translateY(100px);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(100vw) translateY(-100px);
+        opacity: 0;
+    }
+}
+
+/* Nebula-like background gradients */
+.nebula {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    background:
+        radial-gradient(ellipse at 20% 30%, rgba(56, 189, 248, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(167, 139, 250, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 40% 80%, rgba(45, 212, 191, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 90% 20%, rgba(244, 114, 182, 0.05) 0%, transparent 50%);
+}
+
+.container {
+    min-height: 100vh;
+    position: relative;
+    z-index: 10;
+}
+
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: transparent;
+    backdrop-filter: none;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.logo-triangle {
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    position: relative;
+    margin-right: 4px;
+}
+
+.logo-triangle::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 20px solid rgba(180, 200, 255, 0.9);
+    top: 2px;
+    left: 0;
+}
+
+.logo-triangle::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 14px solid #050810;
+    top: 8px;
+    left: 4px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #6478ff;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 70px 20px 50px;
+    /* Reduced padding to maximize space for constellation */
+}
+
+.ecosystem-container {
+    width: 100%;
+    max-width: 1000px;
+    /* Optimized for viewport */
+    height: 650px;
+    /* Fits in standard PC screens */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.ecosystem-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 10px;
+    letter-spacing: 2px;
+    z-index: 100;
+}
+
+.scroll-arrow {
+    font-size: 18px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Node hover effects */
+.node-group {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.node-group:hover {
+    transform: scale(1.05);
+}
+
+.node-text {
+    font-family: 'Helvetica Neue', sans-serif;
+    user-select: none;
+}
+
+.center-text {
+    font-family: 'Helvetica Neue', sans-serif;
+    user-select: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .ecosystem-container {
+        height: 550px;
+        /* Optimized for tablet screens */
+        max-width: 95vw;
+    }
+
+    .hero-section {
+        padding: 60px 10px 40px;
+        /* Reduced padding for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        display: none;
+    }
+
+    .ecosystem-container {
+        height: 450px;
+        /* Optimized for mobile screens */
+    }
+}
+
+/* Additional particle effects for more depth */
+.particle {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: drift 20s linear infinite;
+}
+
+@keyframes drift {
+    0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100px) translateX(50px);
+        opacity: 0;
+    }
+}
+
+/* Enhanced glow effects for the space theme */
+.cosmic-glow {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 800px;
+    height: 800px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(100, 120, 255, 0.03) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+    animation: pulse-glow 8s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.6;
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.scale-in {
+    transform: scale(0);
+    animation: scaleIn 0.8s ease forwards;
+}
+
+@keyframes scaleIn {
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Glow effects */
+.glow {
+    filter: drop-shadow(0 0 10px currentColor);
+}
+
+.strong-glow {
+    filter: drop-shadow(0 0 20px currentColor);
+}
+
+/* Enhanced glow effects for the space theme */
+.cosmic-glow {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 800px;
+    height: 800px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(100, 120, 255, 0.03) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+    animation: pulse-glow 8s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.6;
+    }
+}
+
+/* Additional particle effects for more depth */
+.particle {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: drift 20s linear infinite;
+}
+
+@keyframes drift {
+    0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100px) translateX(50px);
+        opacity: 0;
+    }
+}
+
+/* Ensure scroll indicator doesn't interfere with constellation */
+@media (max-width: 768px) {
+    .scroll-indicator {
+        bottom: 3px;
+        font-size: 8px;
+    }
+
+    .scroll-arrow {
+        font-size: 14px;
+    }
+}
+
+@media (max-height: 800px) {
+    .scroll-indicator {
+        bottom: 2px;
+        font-size: 8px;
+    }
+
+    .scroll-arrow {
+        font-size: 12px;
+    }
+}
+
+/* Additional spacing for very large screens */
+@media (min-height: 1000px) {
+    .scroll-indicator {
+        bottom: 40px;
+    }
+
+    .hero-section {
+        padding-bottom: 100px;
+    }
+}
