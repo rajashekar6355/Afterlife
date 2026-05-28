@@ -11,84 +11,84 @@ const ecosystemData = {
 
     nodes: [
         {
-            id: 'scanme',
-            label: 'AUTONOMIQ',
+            id: 'autonomic',
+            label: 'AUTONOMIC',
             sublabel: 'AI SOLUTIONS',
             angle: 0, // Top
-            color: '#fb923c',
-            glowColor: 'rgba(251,146,60,0.35)',
+            color: '#38bdf8',
+            glowColor: 'rgba(56, 189, 248, 0.35)',
             description: ['AI-Powered Solutions', 'Driving Autonomous', 'Innovation'],
             icon: 'brain',
-            customNodeRadius: 90,
-            customRadius: 220
+            customNodeRadius: 76,
+            customRadius: 300
         },
         {
-            id: 'autonomiq',
-            label: 'WORKAJOS',
+            id: 'workoaches',
+            label: 'WORKOACHES',
             sublabel: 'HR SOLUTIONS',
-            angle: 70,
-            color: '#38bdf8',
-            glowColor: 'rgba(56,189,248,0.35)',
+            angle: 60, // Top-Right (changed from 70)
+            color: '#2dd4bf',
+            glowColor: 'rgba(45, 212, 191, 0.35)',
             description: ['People. Growth.', 'Performance.', 'Redefined.'],
-            icon: 'users',
-            customRadius: 380,
-            customNodeRadius: 90
+            icon: 'w_logo',
+            customRadius: 375,
+            customNodeRadius: 76
         },
         {
-            id: 'workajos',
+            id: 'global',
             label: 'GLOBAL',
             sublabel: 'PARTNERSHIPS',
-            angle: 110,
-            color: '#2dd4bf',
-            glowColor: 'rgba(45,212,191,0.35)',
+            angle: 120, // Bottom-Right (changed from 110)
+            color: '#60a5fa',
+            glowColor: 'rgba(96, 165, 250, 0.35)',
             description: ['Strategic Alliances,', 'Global Impact'],
             icon: 'handshake',
-            customRadius: 380,
-            customNodeRadius: 90
+            customRadius: 375,
+            customNodeRadius: 76
         },
         {
-            id: 'global-partnership',
+            id: 'future',
             label: 'FUTURE',
             sublabel: 'VENTURES',
             angle: 180, // Bottom
-            color: '#60a5fa',
-            glowColor: 'rgba(96,165,250,0.3)',
+            color: '#38bdf8',
+            glowColor: 'rgba(56, 189, 248, 0.3)',
             description: ['Exploring Tomorrow.', 'Building the Future.'],
             icon: 'rocket',
-            customNodeRadius: 95,
-            customRadius: 210
+            customNodeRadius: 80,
+            customRadius: 290
         },
         {
-            id: 'future-ventures',
-            label: 'AR GAMING',
-            sublabel: 'IMMERSIVE TECH',
-            angle: 250,
+            id: 'afterlife-ar',
+            label: 'AFTERLIFE AR',
+            sublabel: 'AR / XR GAMING',
+            angle: 240, // Bottom-Left (changed from 250)
             color: '#a78bfa',
-            glowColor: 'rgba(167,139,250,0.3)',
+            glowColor: 'rgba(167, 139, 250, 0.3)',
             description: ['Immersive AR Experiences', '& Next-Gen Gaming'],
             icon: 'cube',
-            customRadius: 380,
-            customNodeRadius: 95
+            customRadius: 375,
+            customNodeRadius: 80
         },
         {
-            id: 'ar-gaming',
+            id: 'scanme',
             label: 'SCANME',
             sublabel: 'RESTAURANT TECH',
-            angle: 290,
-            color: '#f472b6',
-            glowColor: 'rgba(244,114,182,0.3)',
+            angle: 300, // Top-Left (changed from 290)
+            color: '#fb923c',
+            glowColor: 'rgba(251, 146, 60, 0.3)',
             description: ['Smart Ordering,', 'Reservations &', 'Restaurant Solutions'],
             icon: 'scan',
-            customRadius: 380,
-            customNodeRadius: 95
+            customRadius: 375,
+            customNodeRadius: 80
         }
     ],
 
     // Configuration
     config: {
-        orbitRadius: 350, // Increased from 280 for wider spread
-        nodeRadius: 65,
-        centerRadius: 130, // Increased from 120 to make center node slightly larger
+        orbitRadius: 350,
+        nodeRadius: 55,
+        centerRadius: 105,
         animationDuration: 2000,
         hoverScale: 1.1
     }
@@ -128,11 +128,9 @@ const icons = {
         <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.44-4.66z"/>
     </svg>`,
 
-    users: `<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
-        <circle cx="9" cy="7" r="4"/>
-        <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
-        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+    w_logo: `<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <path d="M4 6l4 12 4-9 4 9 4-12" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M8 8l4 9 4-9" opacity="0.65" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>`,
 
     handshake: `<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">

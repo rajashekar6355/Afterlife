@@ -5,7 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Afterlife Ecosystem</title>
-  <link rel="stylesheet" href="style.css?v=16">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=17">
 </head>
 
 <body>
@@ -18,14 +23,40 @@
   <!-- Animated stars -->
   <div class="stars-container" id="stars-container"></div>
 
+  <!-- Left Side Navigation Indicators -->
+  <div class="left-sidebar-dots">
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+
+  <!-- Right Side Vertical Text -->
+  <div class="right-sidebar-text">
+    CONNECTED ECOSYSTEM. 155 POSSIBILITIES.
+  </div>
+
   <div class="container">
     <nav class="navbar">
       <div class="logo">
-        <div class="logo-triangle"></div>
+        <svg class="logo-svg" viewBox="0 0 24 24" width="24" height="24">
+          <!-- Left leg of the stylized split triangle logo -->
+          <path d="M11.5 2L2 22h4.5l2-4.5h3v-3h-4.3L11.5 2z" fill="url(#logo-grad)" />
+          <!-- Right leg of the stylized split triangle logo -->
+          <path d="M12.5 2l8.5 20h-4.5l-2-4.5h-3v-3h4.3L12.5 2z" fill="url(#logo-grad)" />
+          <defs>
+            <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#a78bfa" />
+              <stop offset="100%" stop-color="#38bdf8" />
+            </linearGradient>
+          </defs>
+        </svg>
         <span>AFTERLIFE</span>
       </div>
       <div class="nav-links">
-        <a href="#home">HOME</a>
+        <a href="#home" class="active">HOME</a>
         <a href="#solutions">SOLUTIONS</a>
         <a href="#partnerships">PARTNERSHIPS</a>
         <a href="#about">ABOUT US</a>
@@ -46,9 +77,9 @@
     </div>
   </div>
 
-  <script src="ecosystem-data.js?v=201"></script>
-  <script src="ecosystem.js?v=201"></script>
-  <script src="stars.js?v=201"></script>
+  <script src="ecosystem-data.js?v=202"></script>
+  <script src="ecosystem.js?v=202"></script>
+  <script src="stars.js?v=202"></script>
 </body>
 
 </html>
